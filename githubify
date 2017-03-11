@@ -1,0 +1,7 @@
+[[ -z $1 ]] && echo "usage: githubify github_repo_name"; exit
+#echo https://github.com/amakhlin/$1.git 
+git remote rename origin upstream
+git remote add origin https://github.com/amakhlin/$1.git
+git add .
+git commit -m "first commit"
+git push origin master
